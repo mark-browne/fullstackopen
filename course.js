@@ -9,15 +9,15 @@ const Header = (props) => {
 
 const Content = (props) => {
   return (
-      <ul>
-        {props.parts.map( part => (<Part name={part.name} id={part.id}/>) )}
-      </ul>
+       <>
+        {props.parts.map( part => <Part key={part.id} part={part}/>)}
+       </>
   )
 }
 
 const Part = (props) => {
   return (
-      <li key={props.id}>{props.name}</li>
+      <li>{props.part.name} {props.part.exercises}</li>
   )
 }
 
@@ -25,7 +25,9 @@ const Course = (props) => {
   return (
     <>
       <Header name={props.course.name}></Header>
+      <ul>
       <Content parts={props.course.parts}/>
+      </ul>
     </>
   );
 };
