@@ -22,7 +22,7 @@ const Part = (props) => {
   );
 };
 
-const Summary = (props) => {
+const Total = (props) => {
   return (
     <p>
       total of exercises{" "}
@@ -40,7 +40,7 @@ const Course = (props) => {
       <ul>
         <Content parts={props.course.parts} />
       </ul>
-      <Summary parts={props.course.parts} />
+      <Total parts={props.course.parts} />
     </>
   );
 };
